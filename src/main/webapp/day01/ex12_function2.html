@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	
+	<script type="text/javascript">	
+		document.write("<p>선언 전 script 태그</p>")
+		// 호이스팅은 태그 단위 이루어진다.
+		// 해당 태그는 선언문이 작성된 태그보다 빨리 작성되었기 때문에 함수호출이 안된다.
+		// msg1();
+	</script>
+	
+	<script type="text/javascript">
+		// 호이스팅 : 태그 안에서 선언식을 가장 먼저 인식하여 실행하는 자바스크립트의 특징
+		// 함수는 같은 이름으로 선언하면 기존 함수를 덮어쓰기한다.
+		// 호이스팅 때문에 함수를 먼저 호출해도 오류 안나고 실행된다.
+		msg1();
+		function msg1() {
+			document.write("<p>2번째 태그111</p>")
+		}
+		function msg1() {
+			document.write("<p>2번째 태그2222</p>")
+		}
+	</script>
+	
+	<script type="text/javascript">
+		msg1();
+		document.write("<hr>")
+		// let 변수 선언은 호이스팅이 되지만 익명 함수는 호이스팅이 되지 않는다.
+		// msg2() 오류
+		let msg2 = function() {
+			document.write("<p>3번째 태그11111</p>")			
+		};
+		msg2()
+	</script>
+	
+	<script type="text/javascript">
+		function msg3() {
+			document.write("<p>4번째 태그11111</p>")			
+		}
+		/*
+		let은 같은 이름을 허용하지 않는다. 함수명과 변수명이어도 안된다.
+		let msg3 = function() {
+			document.write("<p>4번째 태그2222</p>")
+		}
+		*/
+		msg3()
+	</script>
+
+</head>
+<body>
+
+</body>
+</html>

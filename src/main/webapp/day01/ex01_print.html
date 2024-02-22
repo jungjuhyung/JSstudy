@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>화면 출력(브라우저 출력)</title>
+	<!-- <head>가 <body>보다 먼저 실행되기 때문에 이쪽이 먼저 출력된다. -->
+	<script type="text/javascript">
+		// 1. 브라우저에서 출력하는 방법
+		document.write("hi~~")
+		// 태그도 실행이 가능하다.
+		document.write("<h1>방가방가</h1>")
+			
+		// 2. 콘솔창에 출력(f12 => consol창 : debugger할 때 사용)
+		console.log('consol-1')
+	</script>
+</head>
+<body>
+	<script type="text/javascript">
+		document.write("본문 태그 앞")
+		console.log('consol-2')
+	</script>
+	<h1>Hello JS</h1>
+	<script type="text/javascript">
+		document.write("본문 태그 뒤")
+		console.log('consol-2')
+	</script>
+	
+</body>
+</html>

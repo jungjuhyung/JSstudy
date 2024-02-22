@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>연산자(opperater)</title>
+	<script type="text/javascript">
+		let myInt = 5;
+		let myFloat = 6.667;
+		
+		// typeof 변수명 => 해당 변수의 자료형을 반환
+		// 정수와 실수의 타입은 javascript에서는 number이다.
+		console.log(`myInt= ${myInt}, 자료형은 ${typeof myInt}`);
+		console.log(`myFloat= ${myFloat}, 자료형은 ${typeof myFloat}`);
+		
+		// 실수일 때 고정된 소수점 자리수를 반올림 하려면 .toFixed(자리수) 메서드를 사용하자
+		// 자리수 인자까지 반올림하는 함수
+		let num1 = 1.7666548;
+		let res = num1.toFixed(3);
+		console.log(res);
+		
+		// 문자를 숫자로 변경하자
+		// num2에 저장된 값이 "" 형태이기 때문에 string이다.
+		let num2 = "75";
+		res = num2 + 5;
+		console.log(`${res}, ${typeof res}`)
+		
+		// Number("숫자형 문자")를 통해 자료형을 number로 변경
+		// 함수 입력 시 대소문자 주의!!
+		res = Number(num2)+ 5;
+		console.log(`${res}, ${typeof res}`)
+		
+		// 숫자형 문자를 인자로 넣지 않으면 결과값이 NaN으로 나온다.
+		// NaN : Not a Number => 숫자 자리에 맞지 않는 문자가 들어가있다. => 숫자형 문자가 아니라는 뜻이다.
+		res = Number("한국")+ 5;
+		console.log(`${res}, ${typeof res}`)
+		
+		// 산술 연산자
+		let su1 = 7;
+		let su2 = 3;
+		document.write("<h2>")
+		document.write("<p>산술연산자(+,-,*,/,%,**)</p>")
+		document.write(`su1+su2 =${su1+su2}<br>`);
+		document.write(`su1+su2 =${su1-su2}<br>`);
+		document.write(`su1+su2 =${su1*su2}<br>`);
+		document.write(`su1+su2 =${(su1/su2).toFixed(1)}<br>`);
+		document.write(`su1+su2 =${su1%su2}<br>`);
+		document.write(`su1+su2 =${su1**su2}<br>`);
+		
+		document.write("<p>증감연산자(++, --)</p>");
+		// 숫자에 직접 증감연산자를 사용하지 못한다.
+		// document.write(3++); 오류
+		
+		let num3 = 4;
+		document.write(`++num3 = ${++num3}<br>`)
+		document.write(`num3++ = ${num3++}<br>`)
+		document.write(`num3 = ${num3}<br>`)
+		
+		document.write("<p>대입연산자(+=, -=, *=, /=)</p>");
+		su1 = 7;
+		su2 = 3;
+		document.write(`su1+=7 => ${su1+=7}<br>`)
+		document.write(`su1-=7 => ${su1-=7}<br>`)
+		document.write(`su1*=7 => ${su1*=7}<br>`)
+		document.write(`su1%=7 => ${su1/=7}<br>`)
+		
+		document.write("<p>비교연산자(>,<,>=,<=,==,!=,===,!==)</p>");
+		su1 = 7;
+		su2 = 3;
+		document.write(`${su1} >= ${su2} = ${su1 >= su2}<br>`);
+		document.write(`${su1} <= ${su2} = ${su1 <= su2}<br>`);
+		document.write(`${su1} == ${su2} = ${su1 == su2}<br>`);
+		document.write(`${su1} != ${su2} = ${su1 != su2}<br>`);
+		document.write("<p>비교연산자 주의 사항</p>");
+		su1 = 1000;
+		su2 = "1000";
+		// ==, !==는 자료형과 상관없이 값만 일치하면 true가 나온다.
+		// java와의 차이점: 자료형을 지정하지 않기 때문에 발생하는 문제
+		// 문자1000과 숫자1000을 숫자1000과 숫자1000으로 비교한다.
+		document.write(`${su1} == ${su2} = ${su1 == su2}<br>`);
+		document.write(`${su1} != ${su2} = ${su1 != su2}<br>`);
+		
+		// ===, !==는 자료형과 값까지 일치해야 true가 나온다.
+		document.write(`${su1} === ${su2} = ${su1 === su2}<br>`);
+		document.write(`${su1} !== ${su2} = ${su1 !== su2}<br>`);
+		
+		// javascript에서는 true를 1, false를 0 값으로 취급할 수 있기 때문에 ==,!=에서는 같다고 취급한다. 
+		su1 = true;
+		su2 = 1;
+		document.write(`${su1} == ${su2} = ${su1 == su2}<br>`);
+		document.write(`${su1} === ${su2} = ${su1 === su2}<br>`);
+		
+		// ===, !==는 값은 같아도 자료형이 다르기 때문에 false로 나온다.
+		su1 = false;
+		su2 = 0;
+		document.write(`${su1} == ${su2} = ${su1 == su2}<br>`);
+		document.write(`${su1} === ${su2} = ${su1 === su2}<br>`);
+		
+		document.write("<p>논리연산자(&&, ||, !)</p>");
+		su1 = true;
+		su2 = false;
+		document.write(`${su1} && ${su1} = ${su1 && su1}<br>`); // true
+		document.write(`${su1} && ${su2} = ${su1 && su2}<br>`); // false
+		document.write(`${su2} && ${su2} = ${su2 && su2}<br>`); // false
+		document.write("<hr>")
+		document.write(`${su1} || ${su1} = ${su1 || su1}<br>`); // true
+		document.write(`${su1} || ${su2} = ${su1 || su2}<br>`); // true
+		document.write(`${su2} || ${su2} = ${su2 || su2}<br>`); // false
+		
+		document.write("<p>삼항연산자</p>");
+		// 형식 => 결과변수 = 조건식? 참일때 : 거짓일때
+		// java에서는 결과, 참, 거짓의 자료형이 모두 같아야한다.
+		// javascript에서는 상관없다.
+		su1=55;
+		
+		// su1이 60이상이면 합격, 아니면 불합격을 res에 저장
+		res = su1 >=60 ? "합격":"불합격";
+		document.write(`res=${res}`)
+		
+		document.write("</h2>")
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

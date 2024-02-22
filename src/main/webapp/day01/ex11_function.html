@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>function</title>
+	<script type="text/javascript">
+		// 함수와 메서드 차이 : 클래스 안에 있으면 메서드, 클래스 밖에서 별도로 존재하면 function이다.
+		// 호출해야만 함수를 실행 할 수 있다.
+		// 선언 함수, 익명 함수, 화살표 함수(ES6부터 지원) 로 구별된다.
+		// return이 있을 수도 있고 없을 수도 있다.
+		
+		/*
+		선언 함수
+		호이스팅이 된다.
+		형식)
+		function 함수명([인자]) {
+			내용
+			[return;]
+		}
+		*/
+		
+		/*
+		익명 함수
+		함수명이 없으며 보통 변수에 저장해서 사용
+		return을 작성 안해도 되지만 특성상 return을 대부분 작성한다.
+		형식)
+		let 또는 const 변수명 = function([인자]) {
+			내용
+			[return;]
+		}
+		*/
+		
+		/*
+		익명 화살표 함수
+		익명 함수에만 사용된다.
+		return이 없다.
+		let또는const 변수 = ([인자]) => {
+			내용
+		}
+		*/
+		
+		// 선언 함수 선언
+		function msg1() {
+			document.write("선언함수")
+		}
+		// 익명 함수 변수 저장
+		let msg2 = function() {
+			document.write("익명함수")
+		}
+		
+		// 선언 함수 호출
+		msg1();
+		document.write("<hr>");
+		
+		// 익명함수가 저장된 변수만 작성해서 출력하면 작성한 그대로 나온다.
+		document.write(`${msg2}<br>`)
+		// 익명함수 정상 호출 => 선언함수와 똑같이 호출한다.
+		msg2();
+		document.write("<hr>");
+		
+		// 인자가 여러개인 익명 화살표 함수 저장
+		// return과 {} 생략가능
+		const add = (x,y) => x+y;
+		
+		// 인자가 여러개인 익명 화살표 함수 호출
+		let res = add(3,2);
+		document.write(add(3,2)+"<br>")
+		document.write(`${res}<br>`)
+		document.write("<hr>");
+		
+		// 인자가 하나인 익명 화살표 함수 저장
+		// return과 {}, 매개변수() 생략가능
+		const add2 = x => x+10;
+		
+		// 인자가 하나인 익명 화살표 함수 호출
+		let res2 = add2(25);
+		document.write(add2(25)+"<br>")
+		document.write(`${res2}<br>`)
+		
+		document.write("<hr>");
+		// 인자가 없을때 익명 화살표 함수 저장
+		// return과 {} 생략가능
+		// 반드시 ()는 작성해야한다.
+		const add3 = () => 10;
+		
+		// 인자가 없을 때 익명 화살표 함수 호출
+		let res3 = add3();
+		document.write(add3()+"<br>")
+		document.write(`${res3}<br>`)
+	</script>
+</head>
+<body>
+
+</body>
+</html>

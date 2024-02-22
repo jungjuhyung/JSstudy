@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+		// 리턴 없는 함수
+		function add(a, b) {
+			document.write(`결과 : ${a+b}<br>`)
+		}
+		
+		// 리턴 있는 함수
+		function sub(a,b) {
+			return a-b;
+		}
+		
+		// 두 값을 받아서 두 값 사이의 짝수가 얼마나 있는지 구하는 함수
+		// 리턴 없는 함수
+		function cnt1(a,b) {
+			let res = 0;
+			for (let i = a; i <= b; i++) {
+				if (i%2==0) {
+					++res;
+				}
+			}
+			document.write(`${a}와 ${b} 사이의 짝수 개수는 ${res}개 입니다.`)
+		}
+		// 리턴 있는 함수
+		function cnt2(a,b) {
+			let res = 0;
+			for (let i = a; i <= b; i++) {
+				if (i%2==0) {
+					++res;
+				}
+			}
+			return res;
+		}
+	</script>
+</head>
+<body>
+	<h2>자바스크립트 함수 연습</h2>
+	<script type="text/javascript">
+		// 리턴이 없는 함수 호출
+		add(7,5);
+		
+		// 리턴이 있는 함수 호출
+		let res = sub(7,5);
+		document.write(`결과 : ${res}<br>`)
+		
+		// 리턴이 없는 cnt1 함수 호출
+		cnt1(1,100);
+		
+		// 리턴이 있는 cnt2 함수 호출
+		let res2 = cnt2(1,100);
+		document.write(`결과 : ${res2}<br>`)
+	</script>
+</body>
+</html>

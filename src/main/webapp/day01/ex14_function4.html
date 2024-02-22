@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+		// 화살표 함수는 익명함수에만 사용할 수 있다.
+		// 기본형) 경우에 따라 생략 가능한 것들이 있다.
+		// let또는const 변수이름 = (매개변수) => {함수 내용};
+		
+		// 매개 변수 없는 익명함수
+		const h1 = function() {
+			return hi;
+		}
+		
+		// 매개 변수 없는 화살표 함수
+		const h2 =() => {return "hi";}
+		// 위의 함수를 축약한 형태
+		// ;로 끝나는 명령이 한줄 일 때 {}, return 생략 가능
+		const h3 =() => "hi";
+		
+		document.write("hr")
+		
+		// 매개 변수 하나일 때
+		const k1 = function(value) {
+			document.write(`${value}+익명함수<br>`);
+		}
+		
+		// 매개 변수 하나일 때 화살표 함수
+		const k2 = (value) => {return value+"님";}
+		const k3 = value => value+"님";
+		
+		k1("안녕");
+		document.write(`${k2("홍길동")}<br>`);
+		document.write(`${k3("일지매")}<br>`);
+		
+		
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
