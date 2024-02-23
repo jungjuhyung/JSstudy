@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>숫자 관련 클래스</title>
+	<script type="text/javascript">
+		let s1 = 10;
+		let s2 = 6;
+		document.write(`${s1+s2}<br>`);
+		document.write(`${s1-s2}<br>`);
+		document.write(`${s1*s2}<br>`);
+		document.write(`${(s1/s2).toFixed(1)}<br>`);
+		document.write(`${s1%s2}<br>`);
+		document.write("<hr>")
+		
+		s1 = "10";
+		s2 = "6";
+		document.write(`${s1+s2}<br>`); // +만 계산되지 않고 문자 연결자로 작용한다.
+		document.write(`${s1-s2}<br>`);
+		document.write(`${s1*s2}<br>`);
+		document.write(`${(s1/s2).toFixed(1)}<br>`);
+		document.write(`${s1%s2}<br>`);
+		document.write("<hr>")
+		
+		// toFixed(자리수) : 지정된 소수점 이하 자릿 수 작성(반올림), 음수 인자는 사용 불가
+		// toFixed는 결과같을 String으로 나온다.
+		// 없는 자리는 0으로 채운다.
+		s1 = 214.646;
+		s2 = 214.444
+		// document.write(s1.toFixed(-1)+"<br>") 사용 안딤
+		document.write(s1.toFixed(0)+"<br>")
+		document.write(s1.toFixed(1)+"<br>")
+		document.write(s1.toFixed(2)+"<br>")
+		document.write(s1.toFixed(3)+"<br>")
+		document.write(s1.toFixed(4)+"<br>")
+		document.write("<hr>")
+		document.write(s2.toFixed(0)+"<br>")
+		document.write(s2.toFixed(1)+"<br>")
+		document.write(s2.toFixed(2)+"<br>")
+		document.write(s2.toFixed(3)+"<br>")
+		document.write(s2.toFixed(4)+"<br>")
+		document.write("<hr>")
+		
+		// 문자열을 숫자로 변환 => Number, parseInt, parseFloat
+		// NaN(Not a Number) : 숫자가 들어갈 자리에 숫자가 아닌 다른 값이 들어오면 표시되는 예약어
+		// isNaN : NaN 확인(NaN이면 true)
+		document.write(Number(true)+10+"<br>"); // true는 1
+		document.write(Number(false)+10+"<br>"); // false는 0
+		document.write(Number("10")+10+"<br>"); // 20
+		document.write(Number("10.124")+10+"<br>"); // 20.1200002, 부동소수점으로 쓰레기값이 붙어 나온다.
+		document.write(Number("10.124").toFixed(3)+10+"<br>"); // 10.12410
+		document.write("<hr>")
+		
+		// 문자열을 숫자로 변환할 때 문자가 포함되어 있으면 NaN으로 표시된다.
+		// 단, 공백은 상관없이 숫자로 변환해준다.
+		document.write(Number("10A")+10+"<br>"); // NaN
+		document.write(Number("A10")+10+"<br>"); // NaN
+		document.write(Number("hello")+10+"<br>") // NaN
+		document.write(Number("10    ")+10+"<br>"); // 20
+		document.write(Number("    10")+10+"<br>"); // 20
+		document.write(Number("  10  ")+10+"<br>"); // 20
+		document.write("<hr>")
+		
+		// parseInt
+		// 숫자와 문자가 같이 있으 때 숫자로 시작한다면 숫자부분까지는 숫자형으로 바꿔서 반환해준다.
+		// true와 false를 인정하지 않는다.
+		document.write(parseInt(true)+10+"<br>"); // NaN
+		document.write(parseInt(false)+10+"<br>"); // NaN 
+		document.write(parseInt("10A")+10+"<br>"); // 20
+		document.write(parseInt("A10")+10+"<br>"); // NaA
+		document.write(parseInt("hello")+10+"<br>") // NaN
+		document.write(parseInt("10    ")+10+"<br>"); // 20
+		document.write(parseInt("    10")+10+"<br>"); // 20
+		document.write(parseInt("  10  ")+10+"<br>"); // 20
+		document.write("<hr>")
+		
+		// parseFloat
+		// 숫자와 문자가 같이 있으 때 숫자로 시작한다면 숫자부분까지는 숫자형으로 바꿔서 반환해준다.
+		// true와 false를 인정하지 않는다.
+		document.write(parseFloat(true)+10+"<br>"); // NaN
+		document.write(parseFloat(false)+10+"<br>"); // NaN 
+		document.write(parseFloat("10A")+10+"<br>"); // 20
+		document.write(parseFloat("10.03A")+10+"<br>"); // 20.03
+		document.write(parseFloat("10,03A")+10+"<br>"); // 20
+		document.write(parseFloat("A10")+10+"<br>"); // NaA
+		document.write(parseFloat("hello")+10+"<br>") // NaN
+		document.write(parseFloat("10    ")+10+"<br>"); // 20
+		document.write(parseFloat("    10")+10+"<br>"); // 20
+		document.write(parseFloat("  10.03  ")+10+"<br>"); // 20
+		document.write("<hr>")
+	</script>
+</head>
+<body>
+
+</body>
+</html>

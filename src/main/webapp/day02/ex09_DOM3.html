@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+</head>
+<body>
+	<p id="msg1">Hello World</p>
+	<p><span id="msg2">Welcome JS</span></p>
+	<p id="msg3">서울시 마포구 신수동</p>
+	
+	<p id="res"></p>
+	<script type="text/javascript">
+		// 해당 선택자들은 값을 데이터 형태로 가져오는 것이 아닌
+		// 요소 content 선택함수(내부 content를 전부 선택) => innerHTML
+		// 속성 선택함수 => 요소.속성
+		// CSS 선택함수 => 요소.style.property
+		
+		// html 요소변경
+		// HTML의 setter처럼 값을 넣을 수 있다. 
+		// JS선택함수(document.querySelector().~.~) = "변경할 내용"
+		document.querySelector("#msg1").innerHTML="<h2>KOREA SEOUL</h2>";
+		document.querySelector("#msg1").align="center";
+		document.querySelector("#msg1").style.color="tomato";
+		
+		document.getElementById("msg3").innerHTML="<h2>안녕하세요</h2>";
+		document.getElementById("msg3").align="center";
+		document.getElementById("msg3").style.color="tomato";
+		
+		// html 요소추출
+		// HTML의 getter처럼 값을 추출할 수 있다.. 
+		// 변수 = JS선택함수(document.querySelector().~.~)
+		// 내용 변경(내부 content를 전부 변경) => innerHTML
+		// 속성 변경 =>변수= .속성
+		// CSS 변경 => .style.property
+		let str = document.querySelector("#msg1").innerHTML;
+		console.log(str);
+		
+		// 추출한 것을 입력하기
+		document.querySelector("#res").innerHTML=str;
+	</script>
+</body>
+</html>

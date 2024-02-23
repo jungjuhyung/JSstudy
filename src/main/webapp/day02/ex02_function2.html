@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+		// 매겨변수를 함수로 사용 가능하다. => 콜백함수
+		function exec(f){
+			// 매개변수로 함수를 받아서 사용할 때는 매개변수()로 사용하면 된다.
+			f();
+		}
+		function hello_1() {
+			document.write("즐거운 오전 입니다.");
+			return hello_1();
+		}
+		function hello_2() {
+			document.write("점심식사 하셨나요?");
+			return hello_2();
+		}
+		function hello_3() {
+			document.write("즐거운 오후 되세요");
+			return hello_3();
+		}
+		function hello_4() {
+			document.write("안녕히 주무세요");
+			return hello_4();
+		}
+		function hello_5() {
+			document.write("오늘도 무사히");
+			return hello_5();
+		}
+	</script>
+</head>
+<body>
+	<script type="text/javascript">
+		let time = 23;
+		let k ='';
+		if (time < 12) {
+			k=hello_1();
+		}else if (time >= 12 && time <=14) {
+			k=hello_2();
+		}else if (time >= 15 && time <=19) {
+			k=hello_3();
+		}else if (time >= 22) {
+			k=hello_4();
+		}else {
+			k=hello_5();
+		}
+		document.write("<hr>")
+		exec(k)
+		document.write("<hr>")
+	</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>JS함수 호출</title>
+	<script type="text/javascript">
+		function test(su) {
+			document.write(`<h2>함수호출연습 ${su}<h2>`)			
+		}	
+	</script>
+</head>
+<body>
+	<h1>자바스크립트 함수 호출</h1>
+	방법1: <script type="text/javascript">test(1);</script> 
+	<!-- 글자를 누르면 함수 호출하는 onclick속성, 디폴트는 새창에서 열기 -->
+	<!-- 태그 안에 작성된 것은 버튼에 새겨지는 이름이다.  -->
+	방법2: <button onclick="test(2)">함수호출1</button>
+	<hr>
+	방법3: <div onclick="test(3)">함수호출2</div>
+	<hr>
+	방법4: <form action="#">
+			<input type="hidden" name="id" value="hong">
+			<input type="submit" value="보내기">
+			<input type="button" value="함수호출" onclick="test(5)">
+		 </form>
+</body>
+</html>

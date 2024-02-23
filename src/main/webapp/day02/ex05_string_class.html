@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+		let str1 = "Hello";
+		let str2 = new String("Welcome");
+		
+		// string 함수
+		// 길이 : lenth
+		document.write(str1.length+"<br>")
+		document.write(str2.length+"<br>")
+		
+		// n번째 문자 추출 : charAt(n) * n은 index값 => 0부터
+		document.write(str1.charAt(0)+"<br>") // H
+		document.write(str2.charAt(3)+"<br>") // c
+		
+		// 문자연결자 : concat(str)
+		document.write(str1.concat(str2)+"<br>")
+
+		// 해당문자나 문자열의 위치값 : indexOf("문자나 문자열", 시작인덱스) => 정규식 사용 못함, -1값을 반환하면 찾는 문자가 없다는 것
+		document.write(str1.indexOf("l",3)+"<br>")
+		document.write(str2.indexOf("h")+"<br>")
+		
+		// 해당문자의 마지막 위치값 : lastIndexOf("문자나 문자열")
+		document.write(str1.lastIndexOf("e")+"<br>")
+		
+		// 해당문자나 문자열의 위치값 : search("문자나 문장ㄹ") => 정규식 사용 가능, 시작 위치 지정 못함
+		document.write(str2.search("e")+"<br>")
+		
+		// 원하는 문자열 추출 : slice와 substring
+		// slice(begin, end);	substring(begin, end;)
+		// 인덱스값이기 때문에 end는 포함되지 않는다.
+		str1 = "Apple, Banana, Kiwi";
+		document.write(str1.slice(7,13)+"<br>")
+		document.write(str1.substring(7,13)+"<br>")
+		
+		// 원하는 문자열 추출 : substr(begin, 갯수);
+		document.write(str1.substr(7,6)+"<br>")
+		
+		// 치환 : replace(old, new) => 원본은 안바뀜으로 따로 변수에 저장해줘야한다.
+		document.write(str1.replace("Banana","Mango")+"<br>")
+		document.write(str1+"<br>")
+		
+		// 대소문자 변환 : toUpperCase(), toLowerCase() => 원본은 바뀌지 않음
+		document.write(str1.toUpperCase()+"<br>")
+		document.write(str1.toLowerCase()+"<br>")
+		document.write(str1+"<br>")
+		
+		// 앞뒤 공백 제거 : trim
+		str1 = "apple,banana,kiwi";
+		str2 = "    apple,banana,kiwi    ";
+		document.write(str1.length+"<br>") // 17
+		document.write(str2.length+"<br>") // 25
+		document.write(str2.trim().length+"<br>") // 17
+		
+		// 문자열을 배열 : split("구분자")
+		let str3 = str1.split(",");
+		for ( var k in str3) {
+			document.write(str3[k]+" 사세요 ~<br>")
+		}
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

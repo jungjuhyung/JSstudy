@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+<title>JS : 상위부모, 형제 선택</title>
+</head>
+<body>
+	<main>
+		<section>
+			<article>
+				<ul class="list">
+					<li class="item1">list1</li>
+					<li class="item2">list2</li>
+					<li class="item3">list3</li>
+					<li class="item4">list4</li>
+				</ul>
+			</article>
+		</section>
+	</main>
+	<script type="text/javascript">
+		/* 상위 부모 요소 선택 : .colsest("태그명") */
+		// 인자로 넣은 부모 요소부터 아래 전부 보여준다.
+		const li = document.querySelector("li");
+		console.log(li.closest("main"));
+		console.log(li.closest("article"));
+		
+		// 형제 요소들 선택
+		// .previousElementSibling => 해당 형제의 이전 형제 요소 선택
+		// .nextElementSibling => 해당 형제의 이후 형제 요소 선택
+		const item3 = document.querySelector(".item3")
+		console.log(item3.previousElementSibling)
+		console.log(item3.nextElementSibling)
+	</script>
+</body>
+</html>
