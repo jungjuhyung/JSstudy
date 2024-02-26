@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+		// 날짜 클래스
+		// object 타입으로 반환된다.
+		// 현재 날짜 나타내기 => new Date();
+		// 특정 날짜 나타내기 => new Date("yyyy-mm-dd"or"yyyy/mm/dd");
+		// 시간표시 나타내기 => new Date("yyyy-mm-ddT09:44:00"); //시간은 -만 설정 가능 /는 안됨
+		// 국제 표준시 나태내기(뒤에 Z 붙이기)=> new Date("yyyy-mm-ddT09:44:00Z");
+		document.write(`날짜 : ${new Date()}<br>`)
+		document.write(`날짜 : ${new Date("2024-03-01")}<br>`)
+		document.write(`날짜 : ${new Date("2024/04/10")}<br>`)
+		document.write(`날짜 : ${new Date("2024-05-05T09:44:00")}<br>`)
+		document.write(`날짜 : ${new Date("2024-05-05T09:44:00Z")}<br>`)
+		document.write(`<hr>`)
+		
+		// .toDateString()
+		// 뒤에 시간을 지우고 날짜 데이터를 문자열로 반환
+		document.write(`날짜 : ${new Date().toDateString()}<br>`)
+		// 뒤에 시간을 지우고 날짜 데이터를 .으로 구분하여 문자열로 반환
+		document.write(`날짜 : ${new Date().toLocaleDateString()}<br>`)
+		
+		
+		document.write(`<hr>`)
+		// 년, 월, 일 , 시분초, 요일 뽑아내기
+		// 월 : 0~11로 나오기 때문에 +1 해줘야한다.
+		// 요일 : 일~토 기준 0~6으로 나온다.
+		document.write(`년도 : ${new Date().getFullYear()}<br>`)
+		document.write(`월 : ${new Date().getMonth()+1}<br>`)
+		document.write(`일 : ${new Date().getDate()}<br>`)
+		document.write(`시 : ${new Date().getHours()}<br>`)
+		document.write(`분 : ${new Date().getMinutes()}<br>`)
+		document.write(`초 : ${new Date().getSeconds()}<br>`)
+		document.write(`요일 : ${new Date().getDay()}<br>`)
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

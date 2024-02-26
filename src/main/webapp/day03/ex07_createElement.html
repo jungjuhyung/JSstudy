@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+</head>
+<body>
+	<!--
+	요소=Node 같은 뜻이다.
+	요소 생성 => document.createElement("생성할 태그")
+	자식 요소 추가 => 선택된 부모요소.appendChild(추가할 요소)
+	삽입 위치를 지정해서 요소 추가 => document.insertBefore(삽입할 요소, 삽입할 위치)
+	해당 요소 삭제 => 해당요소.remove
+	해당 요소 삭제 => 부모요소.removeChild(자식요소)
+	지정된 노드의 부모 요소를 반환 => document.parentNode
+	-->
+	<h2 id="title">운동</h2>
+	<form action="#" name="myForm">
+		<!--autocomplete="off" 자동 완성 기능 해제  -->
+		<input type="text" name="myText" placeholder="운동을 입력해주세요" autocomplete="off">
+		<button id="bofore">앞에 추가</button>
+		<button id="btn">추가</button>
+	</form>
+	
+	<ul class="list">
+		<li class="item" id=target>스쿼트
+		<button class="remove_btn">X</button> </li>
+	</ul>
+	<script type="text/javascript">
+		let btn = document.querySelector("#btn")
+		let bef_btn = document.querySelector("#bofore")
+		let inputBox = document.querySelector("input")
+		let targetLi = document.querySelector("#target")
+		
+		// 리스트 생성 버튼 이벤트
+		btn.addEventListener("click",(e)=>{
+			// 새로고침 방지
+			// form은 한번 전송하고 새로고침하기 때문에 바로 사라진다.
+			// e.preventDefault()는 다 실행하고 새로고침 방지
+			// e.defaultPrevented()는 바로 새로고침 방지
+			e.preventDefault();
+			// 생성할 요소를 만들어서 변수에 저장, 추가하는 것이 아니다.
+			let li=document.createElement("li")
+			let ul = document.querySelector(".list")
+			/* btn.setAttribute("class","remove_btn") */
+			// 요소.classList.add("클래스명") => 해당 요소를 class리스트에 추가해주는 메서드
+			// 요소.classList.remove("클래스명") => 해당 요소를 class리스트에서 제거해주는 메서드
+			// 속성에 클래스만 추가할 때 사용 가능
+			li.textContent=inputBox.value;
+			let btn_x = document.createElement("button")
+			btn_x.textContent="X";
+			btn_x.classList.add("remove_btn")
+			li.appendChild(btn_x);
+			
+			// 자식 요소 맨 뒤에 추가
+			ul.appendChild(li);
+			inputBox.value="";
+			inputBox.focus();
+			
+			btn_x.addEventListener("click", (e)=>{
+				e.target.parentNode.remove()
+				inputBox.focus();
+		})
+		});
+		bef_btn.addEventListener("click",(e)=>{
+			e.preventDefault();
+			let li=document.createElement("li")
+			let ul = document.querySelector(".list")
+			li.textContent=inputBox.value;
+			let btn_x = document.createElement("button")
+			btn_x.textContent="X";
+			btn_x.classList.add("remove_btn")
+			li.appendChild(btn_x);
+			// 특정 위치 앞에 삽입
+			ul.insertBefore(li, targetLi)
+			inputBox.value="";
+			inputBox.focus();
+			
+			btn_x.addEventListener("click", (e)=>{
+				e.target.parentNode.remove()
+				inputBox.focus();
+		})
+		})
+
+		
+	</script>
+</body>
+</html>

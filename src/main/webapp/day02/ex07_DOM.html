@@ -50,6 +50,9 @@
 		
 		// document.querySelectorAll() -> 요소 모두 선택하기
 		// 반환값은 NodeList로 나온다. 그래서 반복문 사용해야함
+		// NodeList는 해당 배열과 비슷하지만 각각의 위치값에 선택된 요소의 속성값도 같이 가지고 있다.
+		// 따라서 for in은 안에 있는 속성값을 포함한 모든 값이 반복해서 나오기 때문에 부적절하며
+		// for of로 객체 자체를 꺼내와야한다.
 		const art2 = document.querySelectorAll("#wrap article");
 		console.log(art2);
 		// for in 사용

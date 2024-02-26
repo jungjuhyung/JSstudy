@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function getUser(userId, callback) {
+			setTimeout(() => {
+				const user = {id:userId, name:"nohssam"};
+				callback(user);
+			}, 1000);
+		}
+		function getPosts(userId,callback) {
+			setTimeout(() => {
+				const posts = [{id:1, title:"post1"}, 
+								{id:2, title:"post2"}];
+				callback(posts);
+			}, 1000);
+		}
+		function getComment(postId,callback) {
+			setTimeout(() => {
+				const comments = [{id:1, text:"Comment1"}, 
+								{id:2, text:"Comment2"},
+								{id:3, text:"Comment3"}];
+				callback(comments);
+			}, 1000);
+		}
+		/* 콜백 함수 안에서 콜백 함수를 계속 호출하는 것을 "콜백지옥" 이라고 한다. 
+		이러면 가독성이 나빠지고 복잡해진다.*/
+		getUser(1, (user)=>{
+			console.log(`user:${user}`)
+			getPosts(user.id,(posts)=>{
+				console.log(`posts:${posts}`)
+				getComment(posts.id,(comments)=>{
+					console.log(`comments:${comments}`)
+				});
+			});
+		});
+	</script>
+</body>
+</html>

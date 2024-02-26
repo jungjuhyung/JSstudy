@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>30일 챌린지</title>
+  <style>
+    #container{
+      margin:50px auto;
+      width:300px;
+      height:300px;
+      border-radius:50%;
+      border:2px double #222;
+      background-color:#d8f0fc;
+      text-align: center;
+    }
+    h1 {
+      margin-top:80px;
+    }
+    .accent {
+      font-size:1.8em;
+      font-weight:bold;
+      color:red;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <h1 id="h">책 읽기</h1>
+    <p><span class="accent" id="result"></span>일 연속으로 <br> 책 읽기를 달성했군요.</p>
+    <p></p>
+    <p id="p"></p>
+  </div>  
+	<script type="text/javascript">
+		const now = new Date("2024-02-26"); // 오늘 날짜
+		const firstDay = new Date("2024-01-01") // 시작 날짜
+		
+		// .getTime() => 1970-01-01 00:00:00 를 기준으로 흐른 시간을 밀리초(1/1000) 단위로 변경
+		const toNow = now.getTime();
+		const toFirst = firstDay.getTime();
+		let res = toNow-toFirst;
+		res = Math.round(res/(1000*60*60*24));
+		document.querySelector("#result").innerHTML = res;
+		
+		// 특정 태그에 content 적용하기 => setter
+		// innerHTML => 태그와 컨텐츠를 같이 작성해서 적용 가능하다.
+		document.querySelector("#h").innerHTML = "<h3 style='color:red;'>반드시 책읽기!!</h3>";
+		// innerText => 태그까지 글자 취급해서 적용
+		document.querySelector("#h").innerText = "<h3 style='color:red;'>반드시 책읽기!!</h3>";
+		// TextContent => 태그까지 글자 취급해서 적용
+		document.querySelector("#h").TextContent = "<h3 style='color:red;'>반드시 책읽기!!</h3>";
+		
+		// 특정 태그의 content를 가져와서 적용하기 => getter
+		// content를 추출할 때는 innerHTML, innerText, TextContent 
+		// 모두 태그를 제외하고 content만 추출해서 적용한다.
+		const h1 = document.querySelector("#h").innerHTML;
+		console.log(`h1 : ${h1}`)
+		document.querySelector("#p").innerHTML = h1;
+	</script>
+</body>
+</html>
