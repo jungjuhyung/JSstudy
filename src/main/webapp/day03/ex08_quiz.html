@@ -10,26 +10,34 @@
 		li{
 		font-size: 20px;
 		line-height: 35px;
+		text-decoration: line-through;
 		}
 		.check{
+		display: inline-block;
 		color: #ccc;
+		width: 20px;
 		}
 	</style>
 </head>
 <body>
 	<h1>할 일 목록</h1>
-    <ul>
-        <li><span class="check">&#8730;</span>할 일 1 </li>
-        <li><span class="check">&#8730;</span>할 일 2 </li>
-        <li><span class="check">&#8730;</span>할 일 3 </li>
-        <li><span class="check">&#8730;</span>할 일 4 </li>
-        <li><span class="check">&#8730;</span>할 일 5 </li>
-    </ul>
+    <div>
+	    <ul>
+	        <li><span class="check">&#8730;</span>할 일 1 </li>
+	        <li><span class="check">&#8730;</span>할 일 2 </li>
+	        <li><span class="check">&#8730;</span>할 일 3 </li>
+	        <li><span class="check">&#8730;</span>할 일 4 </li>
+	        <li><span class="check">&#8730;</span>할 일 5 </li>
+	        <li><span>&#8730;</span>할 일 5 </li>
+	    </ul>
+    </div>
     <script type="text/javascript">
     	let span = document.querySelectorAll(".check");
+    	console.log(span)
     	for (let k of span) {
 			k.addEventListener("click",(e)=>{
 				e.target.style.color="#ccc";
+				console.log(e.target.parentNode);
 				e.target.parentNode.style.textDecoration="line-through";
 			})
 		}

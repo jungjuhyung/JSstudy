@@ -1,0 +1,41 @@
+@charset "UTF-8";
+.nav{
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 4;
+}
+.nav_wrapper{
+	/* 최소한의 크기 */
+	min-width: 100px;
+	min-height: 100vh;
+	background-color: #f0f0f0;
+	list-style-type: none;
+	padding-top: 100px;
+}
+.nav_wrapper li{
+	display: flex;
+	padding: 10px 16px;
+}
+.nav_wrapper li:hover{
+	background-color: lightgray;
+}
+.nav_icon{
+	border: none;
+	background-color: transparent;
+	font-size: 1.5rem;
+}
+.nav_menu{
+	border: none;
+	background-color: transparent;
+	font-size: 1rem;
+}
+@media screen and (max-width:800px){
+	.nav_menu{display:none;}
+	.nav_wrapper{min-width: 20px;}
+}
+
+@media screen and (max-width:510px){
+	.nav_wrapper{
+	display: none;}
+}
